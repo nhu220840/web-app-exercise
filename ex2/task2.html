@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2</title>
+</head>
+
+<body>
+    <!-- input[type=number]#num$[placeholder="Num $"]*5 -->
+
+    <input type="number" id="num1" placeholder="Num 1">
+    <input type="number" id="num2" placeholder="Num 2">
+    <input type="number" id="num3" placeholder="Num 3">
+    <input type="number" id="num4" placeholder="Num 4">
+    <input type="number" id="num5" placeholder="Num 5">
+    </br>
+    <button onclick="findMax()">Find Max</button>
+</body>
+
+<script>
+    function findMax(){
+        var max = -Infinity;
+        for (let i = 1; i <= 5; i++){
+            let value = Number(document.getElementById(`num${i}`).value);
+            if (value > max) {
+                max = value;
+            }
+        }
+        alert("Max = " + max);
+    }
+</script>
+</html>

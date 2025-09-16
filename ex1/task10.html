@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Task 10</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            #header, #footer, #display {
+                background-color: #4471c4; 
+            }
+            #header {
+                height: 70px;
+            }
+            #footer {
+                height: 50px
+            }
+            #display { /* 2 boxes container */
+                height: 600px;
+                display: flex;
+            }
+            #menu { /* left box */
+                background-color: #dadada;
+                width: 30%;
+                margin: 5px;
+            }
+            #content { /* right box */
+                background-color: #c4e0b4;
+                flex: 1;
+                margin: 5px;
+            }
+            /* Someone could help me to make the #display scale dynamically with the window size */
+        </style>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div id="display">
+            <div id="menu"></div>
+            <div id="content"></div>
+        </div>
+        <div id="footer"></div>
+    </body>
+</html>

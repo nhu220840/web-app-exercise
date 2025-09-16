@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Task 9</title>
+        <style>
+            table {
+                border: 1px solid white;
+                border-collapse: collapse; /* kẻ liền mạch */
+            }
+            tr {
+                height: 30px;
+            }
+            .even-row td {
+                background-color: #d0d8e8;
+            }
+            th, td {
+                padding: 10px 120px;
+                text-align: center;
+            }
+            th {
+                background-color: #1F4E79;
+                color: white; /* dễ đọc hơn */
+            }
+            td {
+                background-color: whitesmoke;
+                font-size: 14px;
+            }
+            /* highlight nguyên hàng khi hover */
+            tr:hover td {
+                background-color: grey;
+                color: white; /* text nổi bật */
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>ECTS</th>
+            </tr>
+            <tr class="even-row">
+                <td>Math</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td>5</td>
+            </tr>
+            <tr class="even-row">
+                <td>Chemistry</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td>3</td>
+            </tr>
+        </table>
+    </body>
+</html>

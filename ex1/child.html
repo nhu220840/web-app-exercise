@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Task 3</title>
+        <style>
+            img {
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width: 150px;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Đây là trang con (child.html)</h2>
+
+        <!-- Mở trong cùng khung iframe (self) -->
+        <a target="_self" href="https://files.catbox.moe/q8ymhu.jpg">
+            <img src="images/image1.jpg" alt="Image 1">
+            <p>_self</p>
+        </a>
+
+        <!-- Mở trong tab mới -->
+        <a target="_blank" href="https://files.catbox.moe/id077r.jpg">
+            <img src="images/image2.jpg" alt="Image 2">
+            <p>_blank</p>
+        </a>
+        
+        <!-- Mở trong frame cha -->
+        <a target="_parent" href="https://files.catbox.moe/uyxj5q.jpg">
+            <img src="images/image3.jpg" alt="Image 3">
+            <p>_parent</p>
+        </a>
+
+        <!-- Mở toàn bộ cửa sổ, bỏ hết iframe -->
+        <a target="_top" href="https://usth.edu.vn">
+            <img src="images/image4.jpg" alt="Image 4">
+            <p>_top</p>
+        </a>
+    </body>
+</html>

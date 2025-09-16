@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+
+<!-- Warning: Scuff incoming -->
+
+<html>
+<head>
+    <title>Task 11</title>
+    <style>
+        div {
+            background-color: #5b9bd4;
+            text-align: center;
+            color: white;
+            border-color: white;
+        }
+
+        /* Drop shadow */
+        #header, #footer, #menu, #thumbnail, .box, .tmb {
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+        #header, #footer {
+            height: 80px;
+            line-height: 80px;
+            font-size: 25px;
+        }
+
+        #display {
+            height: 1000px;
+            display: flex;
+            background-color: white;
+        }
+
+        #menu, #thumbnail {
+            margin: 5px 0;
+        }
+
+        /* Menu bar */
+        #menu {
+            width: 30%;
+            margin-right: 5px;
+        }
+
+        /* Thumbnails box */
+        #thumbnail {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .box, .tmb {
+            background-color: green;
+            margin: 10px;
+        }
+
+        .box {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .tmb {
+            height: 125px;
+        }
+
+        img {
+            width: 125px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">Banner</div>
+
+    <div id="display">
+        <div id="menu">
+            <div class="box" onclick="showCategory(1)">Arknights</div>
+            <div class="box" onclick="showCategory(2)">Pop</div>
+            <div class="box" onclick="showCategory(3)">Category 3</div>
+            <div class="box" onclick="showCategory(4)">About</div>
+        </div>
+        <div id="thumbnail">
+            <h2>Press any category to continue</h2>
+        </div>
+    </div>
+
+    <div id="footer">Copyright</div>
+
+    <script>
+        function showCategory(num) {
+            const tmb = document.getElementById("thumbnail");
+            tmb.innerHTML = "";
+
+            if (num === 1) {
+                tmb.innerHTML = `
+                    <div class="tmb">
+                        <a target="_blank" href="https://files.catbox.moe/i3ffnu.jpg">
+                            <img src="images/thumb1.jpg" alt="Thumbnail">
+                        </a>
+                    </div>
+                    <div class="tmb">
+                        <a target="_blank" href="https://files.catbox.moe/bzwgsr.jpg">
+                            <img src="images/thumb2.jpg" alt="Thumbnail">
+                        </a>
+                    </div>
+                    <div class="tmb">
+                        <a target="_blank" href="https://files.catbox.moe/8h7z9t.jpg">
+                            <img src="images/thumb3.jpg" alt="Thumbnail">
+                        </a>
+                    </div>`;
+            }
+            else if (num === 2) {
+                tmb.innerHTML = `
+                    <div class="tmb">
+                        <a target="_blank" href="https://files.catbox.moe/4z1s88.jpg">
+                            <img src="images/pop1.jpg" alt="Thumbnail">
+                        </a>
+                    </div>
+                    <div class="tmb">
+                        <a target="_blank" href="https://files.catbox.moe/drugbd.jpg">
+                            <img src="images/pop2.jpg" alt="Thumbnail">
+                        </a>
+                    </div>`;
+            }
+            else if (num === 3) {
+                tmb.innerHTML = `
+                    <div class="tmb">
+                        idk
+                    </div>`;
+            }
+            else if (num === 4) {
+                tmb.innerHTML = `
+                    <div class="tmb">
+                        Phung Dam Tien Si<br>
+                        ICT B3<br>
+                        23BI14384
+                    </div>`;
+            }
+        }
+    </script>
+</body>
+</html>
