@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>Exercise 6</title>
+    <style>
+        .highlight {background-color: burlywood;}
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Introduction</h1>
+    </div>
+    
+    <div>
+        <h1>About HTML</h1>
+        <h1>About CSS</h1>
+    </div>
+        <h1>About JavaScript</h1>
+    <div>
+        <button onclick="applyBackground()">Change color</button>
+    </div>
+
+    <script>
+        function applyBackground(){
+            // // Find all h1 elements that are children of div elements
+            // const divElements = document.querySelectorAll('div');
+
+            // divElements.forEach(div => {
+            //     // get all of the h1 elements "content"
+            //     const h1Elements = Array.from(div.children).filter(child => 
+            //         child.tagName.toLowerCase() === 'h1'
+            //     );
+
+            //     h1Elements.forEach(h1 => {
+            //         h1.style.backgroundColor = '#34e1eb';
+            //     });
+            // });
+            const h1Elements = document.querySelectorAll('div > h1');
+            h1Elements.forEach(function(h1) {
+                h1.classList.add('highlight');
+            })
+        }
+    </script>
+</body>
+
+

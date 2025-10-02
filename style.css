@@ -1,0 +1,38 @@
+/* Dùng Flexbox để căn chỉnh các bảng nằm ngang */
+    .tables-container {
+        display: flex;
+        gap: 20px; /* Tạo khoảng cách giữa các bảng */
+        font-family: Arial, sans-serif; /* Font chữ cho dễ nhìn */
+    }
+
+    /* Style chung cho các bảng */
+    table {
+        border-collapse: collapse; 
+        border: 1px solid black;
+    }
+
+    /* Style cho các ô (tiêu đề và dữ liệu) */
+    th, td {
+        border: 1px solid black; /* Đường viền trong */
+        padding: 5px 10px;       /* Thêm khoảng trống bên trong ô */
+        text-align: left;
+    }
+
+    /* --- Tuân thủ quy tắc màu sắc --- */
+
+    /* 1. Tiêu đề bảng (Tên bảng) */
+    .table-header {
+        background-color: #cccccc; /* Màu xám nhạt */
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* 2. Hàng chứa Khóa Chính (PK) */
+    .pk-row {
+        background-color: #a9a9a9; /* Màu xám đậm hơn */
+    }
+
+    /* Làm đậm chữ PK và FK */
+    .key-col {
+        font-weight: bold;
+    }

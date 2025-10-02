@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Database Tables</title>
+<style>
+    .tables-container {
+        display: flex;
+        font-family: Arial, sans-serif;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        border: 1px solid black;
+        margin-right: 20px;
+    }
+
+    th, td {
+        border: 1px solid black;
+        text-align: left;
+    }
+
+    .table-header {
+        background-color: #a9a9a9;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    tr>td {
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .pk-row{
+        background-color: #ccc;
+    }
+
+    .key-col {
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+<div class="tables-container">
+
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3" class="table-header">account</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="key-col">PK</td>
+                <td class="key-col">accountID</td>
+                <td>int</td>
+            </tr>
+            <tr class="pk-row">
+                <td></td>
+                <td class="key-col">username</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="key-col">password</td>
+                <td>varchar</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3" class="table-header">photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="pk-row">
+                <td class="key-col">PK</td>
+                <td class="key-col">photoID</td>
+                <td>int</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>data</td>
+                <td>varchar</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3" class="table-header">account_photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="key-col">FK</td>
+                <td class="key-col">accountID</td>
+                <td>int</td>
+            </tr>
+            <tr class="pk-row">
+                <td class="key-col">FK</td>
+                <td class="key-col">photoID</td>
+                <td>int</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    
+    <title>Blur Event Example</title>
+    <script>
+        // Khi field1 mất focus, hàm này sẽ chạy
+        function handleBlur() {
+            alert("Field1 has lost focus!");
+        }
+
+        // Gắn sự kiện blur sau khi DOM load
+        window.onload = function () {
+            const field1 = document.getElementById("field1");
+            field1.addEventListener("blur", handleBlur);
+        }
+    </script>
 </head>
+
+<body>
+    <form>
+        <input id="field1" type="text" value="Field 1">
+        <input id="field2" type="text" value="Field 2">
+    </form>
+</body>
+
 </html>

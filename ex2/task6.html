@@ -3,8 +3,8 @@
 <head>
     <title>Task 6</title>
     <style>
-        div>h1 {
-            background-color: aqua;
+        .highlight {
+            background-color: red;
         }
     </style>
 </head>
@@ -15,5 +15,31 @@
         <h1>About CSS</h1>
     </div>
     <h1>About JavaScript</h1>
+
+    <button onclick="CHANGE2()">Apply</button>
+
+    <script>
+        function CHANGE() {
+            const h1Elements = document.querySelectorAll("div > h1");
+
+            h1Elements.forEach(function(h1) {
+                h1.classList.add("highlight");
+            });
+        }
+
+        function CHANGE2() {
+            const divElements = document.querySelectorAll("div");
+
+            divElements.forEach(div => {
+                const h1Elements = Array.from(div.children).filter(child =>
+                    child.tagName.toLowerCase() === "h1"
+                );
+
+                h1Elements.forEach(h1 => {
+                    h1.style.backgroundColor = "#03f0fc";
+                })
+            })
+        }
+    </script>
 </body>
 </html>

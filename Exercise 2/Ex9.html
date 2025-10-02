@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+
+<body>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <p id="clicked">Paragraph</p>
+    <button>Button</button>
+    <div id="log"></div>
+
+    <script>
+        let firstClick = null;
+        let clickCount = 0;
+        document.getElementById("clicked").addEventListener('click', function() {
+            const currentTime = Date.now();
+            const log = document.getElementById("log")
+
+            if(firstClick===null) {
+                // 1st click happened
+                clickCount = 1;
+                firstClick = currentTime;
+                
+                log.innerHTML = `The 1st click happened on ${new Date(firstClick).toLocaleString()}`;
+            } else {
+                clickCount++;
+                const timeDifference = currentTime - firstClick;
+                log.innerHTML = `Click no.${clickCount} - Time Difference: ${timeDifference} milliseconds`;
+                
+                // Reset time for the next click
+                // firstClick = currentTime;
+            }
+        })
+    </script>
+</body>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title>Exercise 5</title>
+</head>
+
+<body>
+
+    <h2>Multiply and Divide 2 numbers: </h2>
+
+    <div>
+        <label>1st number: </label>
+        <input type="number" id="no1" placeholder="Enter number 1">
+    </div>
+
+    <div>
+        <label>2nd number: </label>
+        <input type="number" id="no2" placeholder="Enter number 2">
+    </div>
+
+    <div>
+        <button onclick="multiply()">Multoply</button>
+        <button onclick="divide()">Divide</button>
+    </div>
+
+    <div id="result">The result is: </div>
+
+    <script>
+        function multiply() {
+            const a = parseFloat(document.getElementById("no1").value);
+            const b = parseFloat(document.getElementById("no2").value);
+
+            if(isNaN(a) || isNaN(b)) {
+                document.getElementById("result").innerHTML= 'Invalid numbers'
+            }
+
+            const result = a*b;
+            document.getElementById("result").innerHTML= `The result is: ${result}`
+        } 
+
+        function divide() {
+            const a = parseFloat(document.getElementById("no1").value);
+            const b = parseFloat(document.getElementById("no2").value);
+
+            if (b === 0) {
+                alert("Cannot divide by 0");
+            }
+            
+            const result = a/b;
+            document.getElementById("result").innerHTML= `The result is: ${result.toFixed(2)}`;
+        }
+    </script>
+</body>
+

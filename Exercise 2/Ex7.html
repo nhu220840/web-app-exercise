@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>Exercise 7</title>
+    <stlye>
+
+    </stlye>
+</head>
+
+<body>
+    <div>
+        <input id="field1" type="text" value="Field1">
+        <input id="field2" type="text" value="Field2">
+    </div>
+
+    <div id="log">Click on Field 1 (or somewhere else)</div>
+
+    <script>
+        document.getElementById("field1").addEventListener('blur', function() {
+            const log = document.getElementById("log");
+            const currentTime = new Date().toLocaleString();
+            log.innerHTML = `Field 1 lose focus on ${currentTime}`;
+        });
+
+        document.getElementById("field1").addEventListener('focus', function() {
+            const log = document.getElementById("log");
+            const currentTime = new Date().toLocaleString();
+            log.innerHTML = `Field 1 gained focus on ${currentTime}`;
+        });
+        
+    </script>
+</body>

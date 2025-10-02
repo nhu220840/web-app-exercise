@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        /* --- CSS Styling --- */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Quan trọng để padding không làm tăng width */
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Dùng để hiển thị thông báo lỗi hoặc thành công */
+        #message {
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <form id="loginForm">
+            <h2>Login</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p id="message"></p> </form>
+    </div>
+
+    <script>
+        // --- JavaScript Logic ---
+
+        // 1. Lấy các phần tử HTML cần dùng
+        const form = document.getElementById('loginForm');
+        const passwordInput = document.getElementById('password');
+        const messageElement = document.getElementById('message');
+
+        // 2. Thêm sự kiện 'submit' cho form
+        form.addEventListener('submit', function(event) {
+            // Ngăn form gửi đi và tải lại trang (hành vi mặc định)
+            event.preventDefault(); 
+            
+            const password = passwordInput.value;
+
+            // 3. Gọi hàm kiểm tra mật khẩu
+            if (isValidPassword(password)) {
+                // Nếu mật khẩu hợp lệ
+                messageElement.textContent = 'Đăng nhập thành công!';
+                messageElement.className = 'success'; // Áp dụng style màu xanh
+            } else {
+                // Nếu mật khẩu không hợp lệ
+                messageElement.textContent = 'Mật khẩu phải có ít nhất 1 chữ hoa và không chứa ký tự đặc biệt.';
+                messageElement.className = 'error'; // Áp dụng style màu đỏ
+            }
+        });
+
+        // Hàm kiểm tra tính hợp lệ của mật khẩu
+        function isValidPassword(password) {
+            // Regex để kiểm tra có ít nhất 1 chữ hoa
+            const uppercaseRegex = /[A-Z]/;
+            
+            // Regex để kiểm tra chỉ chứa ký tự a-z, A-Z, 0-9 (không có ký tự đặc biệt)
+            const noSpecialCharsRegex = /^[a-zA-Z0-9]+$/;
+
+            // Mật khẩu phải thỏa mãn cả hai điều kiện
+            const hasUppercase = uppercaseRegex.test(password);
+            const hasNoSpecialChars = noSpecialCharsRegex.test(password);
+
+            return hasUppercase && hasNoSpecialChars;
+        }
+    </script>
+
+</body>
+</html>

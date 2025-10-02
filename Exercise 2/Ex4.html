@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>Exercise 4</title>
+</head>
+
+<body>
+    <h2>Sign Up</h2>
+    <form onsubmit="checkPassword(event)">
+        <div>
+            <label>Password: </label>
+            <input type="password" id="pw1" required>
+        </div>
+        <div>
+                
+            <label>Re-type Password: </label>
+            <input type="password" id="pw2" required>
+
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+
+    <script>
+        function checkPassword(event) {
+            event.preventDefault();
+            const password1 = document.getElementById("pw1").value;
+            const password2 = document.getElementById("pw2").value;
+            const messageDiv = document.getElementById("message");
+
+            if (password1 === password2) {
+                messageDiv.innerHTML = "Your password matched!";
+            } else {
+                messageDiv.innerHTML = "Your password mismatched!";
+            }
+        }
+    </script>
+
+
+</body>
