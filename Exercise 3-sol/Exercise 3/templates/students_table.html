@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 80%; margin: 20px auto; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        h1 { text-align: center; }
+        .nav { text-align: center; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    
+    {% if students %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Mark</th>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.class_name }}</td>
+                <td>{{ student.mark }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p style="text-align: center;">No students found.</p>
+    {% endif %}
+    
+    <div class="nav">
+        <a href="/">Home</a> |
+        <a href="/all_students">All Students</a> |
+        <a href="/excellent_students">Excellent</a> |
+        <a href="/good_students">Good</a> |
+        <a href="/average_students">Average</a>
+    </div>
+</body>
+</html>

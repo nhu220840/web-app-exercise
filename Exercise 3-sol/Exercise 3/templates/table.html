@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Table</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid;
+            padding: 8px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        
+        th {
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Table of Names and Ages</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
