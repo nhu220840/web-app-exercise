@@ -45,12 +45,12 @@
 
         <script>
             function checkPassword(event){
-                event.preventDefault();
                 let pw1 = document.getElementById("password").value;
                 let pw2 = document.getElementById("repassword").value;
-
+                
                 if (pw1 !== pw2) {
                     alert("Passwords not match");
+                    event.preventDefault();
                     return false;
                 }
 
